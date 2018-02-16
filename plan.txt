@@ -1,0 +1,17 @@
+Contact model, controller, 
+
+
+contacts
+==============
+name 
+mobile 
+email 
+city
+address
+facebook
+twitter
+linkedin
+
+status
+========
+text
