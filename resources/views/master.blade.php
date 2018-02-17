@@ -4,6 +4,7 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="{{ asset('materialize/css/materialize.min.css') }}"  media="screen,projection"/>
+      <link rel="stylesheet" href="{{ asset('css/sizing.css') }}">
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
@@ -21,7 +22,7 @@
         <ul class="left hide-on-med-and-down">
           <li><a href="#">Contacts</a></li>
           <li><a href="#">Statuses</a></li>
-          <li class="active"><a href="#">create</a></li>
+          <li class="active"><a href="{{ route('create') }}">create</a></li>
         </ul>
         <ul class="right hide-on-med-and-down">
           <li><a href="#">Login</a></li>

@@ -12,9 +12,11 @@
 */
 
 Route::group(['middleware' => 'auth'], function () {
-  Route::get('/', function () {
-      return view('contacts.index');
-  });
+  // Route::get('', [
+  //   'as' => 'index',
+  //   'uses' => 'ContactController@index'
+  // ]);
+  Route::resource('/', 'ContactController');
 });
 
 
