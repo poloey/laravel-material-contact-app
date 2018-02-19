@@ -36,7 +36,7 @@
 @endif
 
   <div class="row">
-    <form class="col s12" method="post" action="{{ route('store') }}">
+    <form class="col s12" method="post" action="{{ route('contacts.store') }}">
       @csrf
       <div class="row">
         <div class="input-field col s12">

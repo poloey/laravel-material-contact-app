@@ -16,7 +16,8 @@ Route::group(['middleware' => 'auth'], function () {
   //   'as' => 'index',
   //   'uses' => 'ContactController@index'
   // ]);
-  Route::resource('/', 'ContactController');
+  Route::get('/', 'ContactController@index')->name('index');
+  Route::resource('contacts', 'ContactController');
 });
 
 

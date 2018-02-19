@@ -7,6 +7,7 @@
       <link rel="stylesheet" href="{{ asset('css/sizing.css') }}">
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel='stylesheet' href='{{ asset('css/style.css') }}'/>
       @stack('style')
     </head>
     <body>
@@ -14,7 +15,7 @@
   <nav>
     <div class="container">
       <div class="nav-wrapper">
-        <a href="{{ route('index') }}" class="brand-logo center">Contact App</a>
+        <a href="{{ route('contacts.index') }}" class="brand-logo center">Contact App</a>
 
         {{-- burger menu for smaller device --}}
         <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -23,7 +24,7 @@
         <ul class="left hide-on-med-and-down">
           <li><a href="#">Contacts</a></li>
           <li><a href="#">Statuses</a></li>
-          <li class="active"><a href="{{ route('create') }}">create</a></li>
+          <li class="active"><a href="{{ route('contacts.create') }}">create</a></li>
         </ul>
         <ul class="right hide-on-med-and-down">
           <li><a href="#">Login</a></li>
