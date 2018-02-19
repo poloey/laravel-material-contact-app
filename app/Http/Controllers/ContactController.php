@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contact;
+use Str;
 
 class ContactController extends Controller
 {
@@ -103,5 +104,10 @@ class ContactController extends Controller
     {
         Contact::find($id)->delete();
         return redirect( route('contacts.index'));
+    }
+    public function upload_image(Request $request)
+    {
+        echo "<pre>";
+        print_r($request->all());
     }
 }

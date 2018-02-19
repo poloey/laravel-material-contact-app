@@ -12,8 +12,19 @@
             @if ($contact->image == 'images/default.png')
               <img src='{{ asset('images/default.png') }}' class="contact-avatar single" alt=''/ alt="{{$contact->name}}'s avatar">
             @else
-              <img src='{{Storage::url($contact->image)}}' class="contact-avatar single" alt=''/ alt="{{$contact->name}}'s avatar">
+              <img src='{{asset($contact->image)}}' class="contact-avatar single" alt=''/ alt="{{$contact->name}}'s avatar">
             @endif
+          </div>
+          <div class="upload_image">
+            <form action='{{ route('contacts.upload_image') }}' method="post" enctype="multipart/form-data">
+              @csrf
+              <p class="text-center">
+                upload a image -  
+                <input type='hidden' value="{{$contact->id}}" name="contact_id" />
+                <input type='file' name="avatar" />
+                <button class="btn waves-effect waves-green">upload</button>
+              </p>
+            </form>
           </div>
           <h2>{{ $contact->name }}</h2>
           <div class="mb-3">

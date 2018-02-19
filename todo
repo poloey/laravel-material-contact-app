@@ -1,14 +1,13 @@
-✓  completing index page with pagination 
-completing show page with status
+✓ completing index page with pagination 
+✓ completing show page with status
   1. showing a page ✓
   2. showing delete and edit page ✓
   3. completing delete post ✓
   4. showing all status alongside this post ✓
   7. add delete option for status ✓
-  5. making a textbox for adding status
-  6. storing status 
-and add and delete status in show page
+  5. making a textbox for adding status ✓
+  6. storing status ✓
+✓and add and delete status in show page
 editing contact page - adding image upload
-deleting contact page
 fixing menu
 
