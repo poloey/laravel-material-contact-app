@@ -14,7 +14,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::paginate(15);
+        $contacts = Contact::orderBy('id', 'desc')->paginate(15);
         return view('contacts.index', compact('contacts'));
     }
 
@@ -66,7 +66,8 @@ class ContactController extends Controller
      */
     public function show($id)
     {
-        //
+        $contact = Contact::find($id);
+        return view('contacts.show', compact('contact'));
     }
 
     /**
@@ -100,6 +101,7 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Contact::find($id)->delete();
+        return redirect( route('contacts.index'));
     }
 }

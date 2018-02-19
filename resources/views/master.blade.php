@@ -66,5 +66,6 @@
 <script>
   $(".button-collapse").sideNav();
 </script>
+@stack('script')
     </body>
   </html>

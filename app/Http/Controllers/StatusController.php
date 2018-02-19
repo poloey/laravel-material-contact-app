@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
+use App\Status;
 
 class StatusController extends Controller
 {
@@ -34,7 +36,14 @@ class StatusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+          'content' => 'min:5'
+        ]);
+        Status::create([
+          'contact_id' => $request->input('contact_id'),
+          'content' => $request->input('content'),
+        ]);
+        return redirect()->back();
     }
 
     /**
@@ -79,6 +88,8 @@ class StatusController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Status::find($id)->delete();
+        Session::flash('message', 'Status delete successfully');
+        return redirect()->back();
     }
 }
