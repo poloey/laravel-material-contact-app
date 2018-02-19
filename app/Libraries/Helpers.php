@@ -2,6 +2,7 @@
 
 class Helpers {
   const NUMBER_OF_CONTACTS = 100;
+  const NUMBER_OF_STATUSES = 500;
   const USERS = [
     [
       'name' => 'Sumon',

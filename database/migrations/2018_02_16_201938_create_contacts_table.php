@@ -17,6 +17,7 @@ class CreateContactsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('mobile');
+            $table->string('image')->default('images/default.png');
             $table->string('email')->nullable();
             $table->string('city')->nullable();
             $table->string('address')->nullable();

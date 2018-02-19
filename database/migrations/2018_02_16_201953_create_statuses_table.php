@@ -15,7 +15,7 @@ class CreateStatusesTable extends Migration
     {
         Schema::create('statuses', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('text');
+            $table->text('content');
             $table->integer('contact_id')->unsigned();
             $table->foreign('contact_id')
       ->references('id')->on('contacts')
