@@ -3,6 +3,9 @@
 <div class="container">
   <div class='p-5 mt-2 teal white-text'>
     <h2>All contacts</h2>
+    @if (!empty($query))
+      <h4>Search Results for <span class="red lighten-1 px-2"> {{$query}}</span></h4>
+    @endif
   </div>
   <div class='row'>
     <div class='col s12'>

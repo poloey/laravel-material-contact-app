@@ -15,29 +15,29 @@
   <nav>
     <div class="container">
       <div class="nav-wrapper">
-        <a href="{{ route('contacts.index') }}" class="brand-logo center">Contact App</a>
+        <a href="{{ route('contacts.index') }}" class="brand-logo center"><i class="material-icons">perm_contact_calendar</i> Contact App <br><span style="font-size: 12px; color: #eee;"> track every last status </span> </a>
 
         {{-- burger menu for smaller device --}}
         <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
 
         {{-- for desktop and laptop navigation --}}
         <ul class="left hide-on-med-and-down">
-          <li><a href="#">Contacts</a></li>
-          <li><a href="#">Statuses</a></li>
-          <li class="active"><a href="{{ route('contacts.create') }}">create</a></li>
+          <li><a href="{{ route('contacts.create') }}">Add a contact</a></li>
         </ul>
         <ul class="right hide-on-med-and-down">
-          <li><a href="#">Login</a></li>
-          <li><a class="dropdown-button" href="#!" data-activates="dropdown_user">UserName<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a> You are login as {{auth()->user()->name}} </a></li>
+          <li>
+            <a onclick="event.preventDefault(); document.querySelector('#logout_form').submit();">Logout</a>
+          </li>
         </ul>
 
       {{-- for mobile navigation --}}
         <ul class="side-nav" id="mobile-nav">
-          <li><a href="#">Contacts</a></li>
-          <li><a href="#">Statuses</a></li>
-          <li class="active"><a href="#">create</a></li>
-          <li><a href="#">Login</a></li>
-          <li><a class="dropdown-button" href="#!" data-activates="dropdown_user">UserName<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a href="{{ route('contacts.create') }}">Add a contact</a></li>
+          <li><a> You are login as {{auth()->user()->name}} </a></li>
+          <li>
+            <a onclick="event.preventDefault(); document.querySelector('#logout_form').submit();">Logout</a>
+          </li>
         </ul>
 
       </div>
@@ -46,9 +46,9 @@
   <nav>
     <div class="container">
       <div class="nav-wrapper">
-        <form>
+        <form action="{{ route('contacts.index') }}">
           <div class="input-field">
-            <input id="search" type="search" required>
+            <input id="search" type="search" name="query" required>
             <label class="label-icon" for="search"><i class="material-icons">search</i></label>
             <i class="material-icons">close</i>
           </div>
@@ -56,6 +56,9 @@
     </div>
     </div>
   </nav>
+  <form id="logout_form" class="hidden" method="post" action='{{ route('logout') }}' style="display: none;">
+    @csrf
+  </form>
   <ul id="dropdown_user" class="dropdown-content">
     <li><a href="#!">Logout</a></li>
   </ul>

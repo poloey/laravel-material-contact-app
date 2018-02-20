@@ -17,8 +17,16 @@ class ContactController extends Controller
      */
     public function index()
     {
+        $query = request('query');
         $contacts = Contact::orderBy('id', 'desc')->paginate(15);
-        return view('contacts.index', compact('contacts'));
+        if (!empty($query)) {
+            $contacts = Contact::where('name', 'like', "%$query%")
+                        ->orWhere('email', 'like', "%$query%")
+                        ->orWhere('address', 'like', "%$query%")
+                        ->orWhere('city', 'like', "%$query%")
+                        ->orderBy('id', 'desc')->paginate(15);
+        }
+        return view('contacts.index', compact('contacts', 'query'));
     }
 
     /**

@@ -23,7 +23,7 @@
                 upload a image -  
                 <input type='hidden' value="{{$contact->id}}" name="contact_id" />
                 <input type='file' name="avatar" />
-                <button class="btn waves-effect waves-green">upload</button>
+                <button class="btn waves-effect waves-green mt-2">upload</button>
               </p>
             </form>
           </div>
