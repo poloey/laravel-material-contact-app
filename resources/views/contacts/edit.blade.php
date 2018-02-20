@@ -6,7 +6,7 @@
       <div class="card teal darken-2 white-text">
         <div class="card-content">
           <h2 class="card-title">
-            Add a contact 
+            Edit a contact 
           </h2>
         </div>
       </div>
@@ -23,59 +23,60 @@
 @endif
 
   <div class="row">
-    <form class="col s12" method="post" action="{{ route('contacts.store') }}">
+    <form class="col s12" method="post" action="{{ route('contacts.update', ['contact' => $contact->id]) }}">
       @csrf
+      @method('put')
       <div class="row">
         <div class="input-field col s12">
-          <input type="text" name="name" id="name" value="{{old('name')}}">
+          <input type="text" name="name" id="name" value="{{$contact->name}}">
           <label for="name">Name</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input type="text" name="mobile" id="mobile" value="{{old('mobile')}}">
+          <input type="text" name="mobile" id="mobile" value="{{$contact->mobile}}">
           <label for="mobile">mobile</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input type="text" name="email" id="Email" value="{{old('email')}}">
+          <input type="text" name="email" id="Email" value="{{$contact->email}}">
           <label for="Email">Email</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input type="text" name="city" id="city" value="{{old('city')}}">
+          <input type="text" name="city" id="city" value="{{$contact->city}}">
           <label for="city">city</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input type="text" name="address" id="address" value="{{old('address')}}">
+          <input type="text" name="address" id="address" value="{{$contact->address}}">
           <label for="address">Address</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input type="text" name="facebook" id="facebook" value="{{old('facebook')}}">
+          <input type="text" name="facebook" id="facebook" value="{{$contact->facebook}}">
           <label for="facebook">facebook</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input type="text" name="twitter" id="twitter" value="{{old('twitter')}}">
+          <input type="text" name="twitter" id="twitter" value="{{$contact->twitter}}">
           <label for="twitter">twitter</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input type="text" name="linkedin" id="linkedin" value="{{old('linkedin')}}">
+          <input type="text" name="linkedin" id="linkedin" value="{{$contact->linkedin}}">
           <label for="linkedin">linkedin</label>
         </div>
       </div>
       <div class="row">
         <div class="col s12">
-          <button type="submit" class="btn waves-effect waves-light">Add Contact</button>
+          <button type="submit" class="btn waves-effect waves-light">Edit Contact</button>
         </div>
       </div>
 

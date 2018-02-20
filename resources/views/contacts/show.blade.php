@@ -16,6 +16,7 @@
             @endif
           </div>
           <div class="upload_image">
+            @include('contacts.errors')
             <form action='{{ route('contacts.upload_image') }}' method="post" enctype="multipart/form-data">
               @csrf
               <p class="text-center">

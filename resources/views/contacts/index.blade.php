@@ -12,11 +12,12 @@
             <div>
               <div class='contact-image'>
                 <a href='{{ route('contacts.show', ['contact' => $contact->id]) }}'>
-                 @if ($contact->image == 'images/default.png')
-                  <img src='{{ asset('images/default.png') }}' class="contact-avatar single" alt=''/ alt="{{$contact->name}}'s avatar">
+                  @if ($contact->image == 'images/default.png')
+                    <img src='{{ asset('images/default.png') }}' class="contact-avatar single" alt=''/ alt="{{$contact->name}}'s avatar">
                   @else
-                    <img src='{{Storage::url($contact->image)}}' class="contact-avatar single" alt=''/ alt="{{$contact->name}}'s avatar">
+                    <img src='{{asset($contact->image)}}' class="contact-avatar single" alt=''/ alt="{{$contact->name}}'s avatar">
                   @endif
+
                 </a>
               </div>
               <h3><a href="{{ route('contacts.show', ['contact' => $contact->id]) }}">
