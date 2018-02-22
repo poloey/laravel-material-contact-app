@@ -22,6 +22,12 @@ composer install
 composer dump-autoload
 ~~~
 
+### make uploads folder for avatar uploads 
+
+~~~php
+mkdir public/images/uploads/
+~~~
+
 #### Configure project by resetting old data and generating new key
 ~~~php
 php artisan cache:clear
