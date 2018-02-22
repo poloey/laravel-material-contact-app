@@ -1,5 +1,6 @@
  <html>
     <head>
+      <title>Contact app for storing contact and tracking status</title>
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
