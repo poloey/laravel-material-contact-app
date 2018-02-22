@@ -32,6 +32,11 @@
           </div>
         @endforeach
       </div>
+      @if(!count($contacts))
+      <div class="p-5 red lighten-2 white-text mt-2">
+        <h3>No records found</h3>
+      </div>
+      @endif
     </div>
   </div>
   <div class='row'>

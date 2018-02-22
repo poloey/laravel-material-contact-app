@@ -25,9 +25,8 @@
           <li><a href="{{ route('contacts.create') }}">Add a contact</a></li>
         </ul>
         <ul class="right hide-on-med-and-down">
-          <li><a> You are login as {{auth()->user()->name}} </a></li>
           <li>
-            <a onclick="event.preventDefault(); document.querySelector('#logout_form').submit();">Logout</a>
+            <a onclick="event.preventDefault(); document.querySelector('#logout_form').submit();">{{auth()->user()->name}} | Logout</a>
           </li>
         </ul>
 
@@ -48,7 +47,7 @@
       <div class="nav-wrapper">
         <form action="{{ route('contacts.index') }}">
           <div class="input-field">
-            <input id="search" type="search" name="query" required>
+            <input placeholder="Search here ...." id="search" type="search" name="query" required>
             <label class="label-icon" for="search"><i class="material-icons">search</i></label>
             <i class="material-icons">close</i>
           </div>
